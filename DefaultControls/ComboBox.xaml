@@ -11,20 +11,24 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBrush}"/>
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />        
+        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">
-                    <Border x:Name="Border" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{DynamicResource ControlCornerRadius}"
-                            Style="{DynamicResource HighlightBorder}">
+                    <Border x:Name="Border" BorderThickness="0.8" CornerRadius="{DynamicResource ControlCornerRadius}"
+                            Background="{DynamicResource ComboBoxMainBackground}">
                         <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="81*"/>
+                                <ColumnDefinition Width="167*"/>
+                            </Grid.ColumnDefinitions>
                             <ToggleButton x:Name="ToggleButton" Focusable="False" ClickMode="Press" Margin="0,0,2,0"
-                                          IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                          IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Grid.ColumnSpan="2">
                                 <ToggleButton.Template>
                                     <ControlTemplate TargetType="{x:Type ToggleButton}">
                                         <DockPanel LastChildFill="False" Background="Transparent">
                                             <Viewbox DockPanel.Dock="Right" Width="20" >
-                                                <TextBlock Text="6" FontFamily="Marlett" Foreground="{DynamicResource GlyphBrush}"
+                                                <TextBlock Text="6" FontFamily="Marlett" Foreground="{DynamicResource ComboBoxArrowColor}"
                                                            VerticalAlignment="Center"/>
                                             </Viewbox>
                                         </DockPanel>
@@ -32,21 +36,21 @@
                                 </ToggleButton.Template>
                             </ToggleButton>
                             <ContentPresenter x:Name="ContentSite" HorizontalAlignment="Left" VerticalAlignment="Center"
-                                              Margin="5,0,25,0" IsHitTestVisible="False" Content="{TemplateBinding SelectionBoxItem}"
+                                              Margin="5,8.52,0,8.52" IsHitTestVisible="False" Content="{TemplateBinding SelectionBoxItem}"
                                               ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" />
                             <TextBox x:Name="PART_EditableTextBox" Visibility="Hidden" VerticalAlignment="Center"
-                                     HorizontalAlignment="Stretch" Margin="0,0,25,0" Focusable="True"
+                                     HorizontalAlignment="Stretch" Margin="0,8.52,25,8.52" Focusable="True"
                                      BorderThickness="0" Background="{TemplateBinding Background}"
-                                     IsReadOnly="{TemplateBinding IsReadOnly}" Foreground="{DynamicResource TextBrush}">
+                                     IsReadOnly="{TemplateBinding IsReadOnly}" Foreground="{DynamicResource TextBrush}" Grid.ColumnSpan="2">
                             </TextBox>
                             <Popup x:Name="Popup" IsOpen="{TemplateBinding IsDropDownOpen}"
-                                   Placement="Bottom" Focusable="False" AllowsTransparency="True">
+                                   Placement="Bottom" Focusable="False" AllowsTransparency="True" Grid.ColumnSpan="2">
                                 <Grid MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}"
                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                                     <Border BorderBrush="{DynamicResource PopupBorderBrush}"
                                             BorderThickness="{DynamicResource PopupBorderThickness}"
-                                            Background="{DynamicResource PopupBackgroundBrush}">
+                                            Background="{DynamicResource ComboBoxPopupBackground}">
                                         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                                             <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                                         </ScrollViewer>
@@ -56,8 +60,8 @@
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="Border" />
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxBorderColor}" TargetName="Border" />
                         </Trigger>
                         <Trigger Property="IsEditable" Value="True">
                             <Setter Property="IsTabStop" Value="False" />
@@ -79,8 +83,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBoxItem}">
                     <Grid>
-                        <Rectangle x:Name="HoverRectangle" IsHitTestVisible="False" Visibility="Collapsed" Fill="{DynamicResource HoverBrush}" />
-                        <Rectangle x:Name="SelectedRectangle" IsHitTestVisible="False" Visibility="Collapsed" Fill="{DynamicResource GlyphBrush}" />
+                        <Rectangle x:Name="HoverRectangle" IsHitTestVisible="False" Visibility="Collapsed" Fill="{DynamicResource ComboBoxHoverItemBrush}" />
+                        <Rectangle x:Name="SelectedRectangle" IsHitTestVisible="False" Visibility="Collapsed" Fill="{DynamicResource ComboBoxSelectedItemBrush}" />
                         <Border Background="Transparent" Padding="{TemplateBinding Padding}">
                             <ContentPresenter VerticalAlignment="Center" />
                         </Border>
@@ -99,10 +103,5 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="Selector.IsSelected" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
 </ResourceDictionary>

@@ -62,20 +62,35 @@
 
     <!-- Specific Color -->
 
-    <Color x:Key="MainBackgroundColor">#1C2127</Color>
-    <Color x:Key="MainBackgroundDarkColor">#161A1F</Color>
-    <Color x:Key="ElementBackgroundColor">#0077EE</Color>
+    <Color x:Key="BackgroundColor1">#1C2127</Color>
+    <Color x:Key="BackgroundColor2">#161A1F</Color>
+    <Color x:Key="BackgroundColor3">#0077EE</Color>
+    <Color x:Key="BackgroundColor4">#2A2C30</Color>
+    <Color x:Key="BackgroundColor5">#313A45</Color>
+    <Color x:Key="BackgroundColor6">#3C4754</Color>
+    <Color x:Key="BackgroundColor7">#475362</Color>
+    <Color x:Key="GlyphDarkColor">#949597</Color>
 
-    <SolidColorBrush x:Key="MainWindowBackground" Color="{DynamicResource MainBackgroundColor}"/>
-    <SolidColorBrush x:Key="MainWindowTopBarBackground" Color="{DynamicResource MainBackgroundDarkColor}"/>
+    <SolidColorBrush x:Key="MainWindowBackground" Color="{DynamicResource BackgroundColor1}"/>
+    <SolidColorBrush x:Key="MainWindowTopBarBackground" Color="{DynamicResource BackgroundColor2}"/>
     
-    <SolidColorBrush x:Key="FilterBackground" Color="{DynamicResource MainBackgroundDarkColor}" />
+    <SolidColorBrush x:Key="FilterBackground" Color="{DynamicResource BackgroundColor2}" />
 
-    <SolidColorBrush x:Key="ExplorerPanelBackground" Color="{DynamicResource MainBackgroundDarkColor}"/>
+    <SolidColorBrush x:Key="ExplorerPanelBackground" Color="{DynamicResource BackgroundColor2}"/>
 
-    <SolidColorBrush x:Key="ListSelectedBackground" Color="{DynamicResource ElementBackgroundColor}"/>
+    <SolidColorBrush x:Key="ListSelectedBackground" Color="{DynamicResource BackgroundColor3}"/>
     <SolidColorBrush x:Key="ListSelectedText" Color="{DynamicResource TextColor}"/>
     <SolidColorBrush x:Key="ListText" Color="{DynamicResource TextColorDarker}"/>
     <SolidColorBrush x:Key="ListHoverText" Color="{DynamicResource TextColor}"/>
+
+    <SolidColorBrush x:Key="ComboBoxMainBackground" Color="{DynamicResource BackgroundColor4}" />
+    <SolidColorBrush x:Key="ComboBoxArrowColor" Color="{DynamicResource GlyphDarkColor}" />
+    <SolidColorBrush x:Key="ComboBoxBorderColor" Color="{DynamicResource GlyphDarkColor}" />
+    <SolidColorBrush x:Key="ComboBoxPopupBackground" Color="{DynamicResource BackgroundColor5}"/>
+    <SolidColorBrush x:Key="ComboBoxSelectedItemBrush" Color="Transparent"/>
+    <SolidColorBrush x:Key="ComboBoxHoverItemBrush" Color="{DynamicResource BackgroundColor3}"/>
+    
+    <SolidColorBrush x:Key="ThumbBrush" Color="{DynamicResource BackgroundColor6}"/>
+    <SolidColorBrush x:Key="ThumbHoverBrush" Color="{DynamicResource BackgroundColor7}"/>
 
 </ResourceDictionary>
