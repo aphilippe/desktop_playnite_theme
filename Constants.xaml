@@ -59,4 +59,23 @@
         <GradientStop Color="#202b4d" Offset="0"/>
         <GradientStop Color="{DynamicResource MainColorDark}" Offset="0.4"/>
     </LinearGradientBrush>
+
+    <!-- Specific Color -->
+
+    <Color x:Key="MainBackgroundColor">#1C2127</Color>
+    <Color x:Key="MainBackgroundDarkColor">#161A1F</Color>
+    <Color x:Key="ElementBackgroundColor">#0077EE</Color>
+
+    <SolidColorBrush x:Key="MainWindowBackground" Color="{DynamicResource MainBackgroundColor}"/>
+    <SolidColorBrush x:Key="MainWindowTopBarBackground" Color="{DynamicResource MainBackgroundDarkColor}"/>
+    
+    <SolidColorBrush x:Key="FilterBackground" Color="{DynamicResource MainBackgroundDarkColor}" />
+
+    <SolidColorBrush x:Key="ExplorerPanelBackground" Color="{DynamicResource MainBackgroundDarkColor}"/>
+
+    <SolidColorBrush x:Key="ListSelectedBackground" Color="{DynamicResource ElementBackgroundColor}"/>
+    <SolidColorBrush x:Key="ListSelectedText" Color="{DynamicResource TextColor}"/>
+    <SolidColorBrush x:Key="ListText" Color="{DynamicResource TextColorDarker}"/>
+    <SolidColorBrush x:Key="ListHoverText" Color="{DynamicResource TextColor}"/>
+
 </ResourceDictionary>
