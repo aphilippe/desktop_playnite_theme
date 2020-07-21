@@ -77,15 +77,15 @@
                                     <Button Name="PART_ButtonPlayAction" Grid.Column="0"
                                             Height="40" Style="{DynamicResource PlayButton}" />
                                     <Button Name="PART_ButtonContextAction"
-                                            Height="40" Grid.Column="0" />
+                                            Height="40" Grid.Column="0" Style="{DynamicResource PlayButton}" />
                                     <Button Name="PART_ButtonMoreActions"
                                             Content="{DynamicResource LOCMoreAction}"
-                                            Height="40" Grid.Column="1" Margin="10,0,0,0" />
+                                            Height="40" Grid.Column="1" Margin="10,0,0,0" Style="{DynamicResource PlayButton}" />
                                     <Button x:Name="PART_ButtonEditGame" Grid.Column="2"
                                             Margin="10,0,5,0" Height="40" Focusable="False"
                                             Content="&#xeded;" FontFamily="{DynamicResource FontIcoFont}">
                                         <Button.Style>
-                                            <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                                            <Style TargetType="Button" BasedOn="{StaticResource PlayButton}">
                                                 <Setter Property="Visibility" Value="Hidden" />
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}}"  Value="True">

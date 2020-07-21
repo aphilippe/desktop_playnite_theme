@@ -2,10 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="PlayButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
+        <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="10,5,10,5" />
         <Setter Property="Template">
             <Setter.Value>
@@ -28,8 +28,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-                <Setter Property="BorderBrush" Value="{DynamicResource TextBrush}" />
+                <Setter Property="Background" Value="{DynamicResource PlayButtonHoverBackgroundBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>

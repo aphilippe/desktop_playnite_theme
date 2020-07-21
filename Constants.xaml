@@ -69,6 +69,7 @@
     <Color x:Key="BackgroundColor5">#313A45</Color>
     <Color x:Key="BackgroundColor6">#3C4754</Color>
     <Color x:Key="BackgroundColor7">#475362</Color>
+    <Color x:Key="BackgroundColor8">#2291FF</Color>
     <Color x:Key="GlyphDarkColor">#949597</Color>
 
     <SolidColorBrush x:Key="MainWindowBackground" Color="{DynamicResource BackgroundColor1}"/>
@@ -92,5 +93,8 @@
     
     <SolidColorBrush x:Key="ThumbBrush" Color="{DynamicResource BackgroundColor6}"/>
     <SolidColorBrush x:Key="ThumbHoverBrush" Color="{DynamicResource BackgroundColor7}"/>
+
+    <SolidColorBrush x:Key="PlayButtonBackgroundBrush" Color="{DynamicResource BackgroundColor3}"/>
+    <SolidColorBrush x:Key="PlayButtonHoverBackgroundBrush" Color="{DynamicResource BackgroundColor8}"/>
 
 </ResourceDictionary>
